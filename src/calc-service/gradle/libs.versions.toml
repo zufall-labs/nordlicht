@@ -1,0 +1,12 @@
+[versions]
+quarkus-version = "3.26.3"
+lombok-version = "8.14.2"
+forbiddenapis-version = "3.9"
+
+[libraries]
+io-quarkus-quarkusBom = { module = "io.quarkus:quarkus-bom", version.ref = "quarkus-version" }
+
+[plugins]
+io-quarkus = { id = "io.quarkus", version.ref = "quarkus-version" }
+io-freefair-lombok = { id = "io.freefair.lombok", version.ref = "lombok-version" }
+de-thetaphi-forbiddenapis = { id = "de.thetaphi.forbiddenapis", version.ref = "forbiddenapis-version" }
