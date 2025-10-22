@@ -1,6 +1,8 @@
 # 🚀 Entropy ADC MQTT Mock Service
 
-This project is a **Go-based mock ADC (Analog-to-Digital Converter)** service that simulates a 32-bit ADC in **Single-Ended (SE) mode**, publishing values via **MQTT** to a topic (`adc/se`). It also includes a **Fiber HTTP API** with an endpoint to retrieve the latest ADC value on demand.
+This project is a **Go-based mock ADC (Analog-to-Digital Converter)** service that simulates a 32-bit ADC in
+**Single-Ended (SE) mode**, publishing values via **MQTT** to a topic (`adc/se`).
+It also includes a **Fiber HTTP API** with an endpoint to retrieve the latest ADC value on demand.
 
 ---
 
@@ -54,6 +56,7 @@ docker run -it --rm \
 ```
 
 > Ensure `mosquitto.conf` exists in the project root with:
+
 ```conf
 listener 1883
 allow_anonymous true
@@ -68,6 +71,7 @@ go run main.go
 ```
 
 This will:
+
 - Start the MQTT ADC mock service.
 - Begin publishing ADC values to `adc/se`.
 - Start the Fiber HTTP server on port `3000`.
@@ -84,8 +88,8 @@ This will:
 
 ```json
 {
-  "raw": 1215619851,
-  "voltage": 2.8756
+    "raw": 1215619851,
+    "voltage": 2.8756
 }
 ```
 

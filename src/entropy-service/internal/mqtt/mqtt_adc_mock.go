@@ -5,8 +5,8 @@ import (
     "math/rand"
     "time"
 
-    "github.com/eclipse/paho.mqtt.golang"
     "ai.zufall.nordlicht.entropy/internal/shared"
+    "github.com/eclipse/paho.mqtt.golang"
 )
 
 type ADCService struct {
@@ -52,8 +52,8 @@ func (s *ADCService) Start() {
 }
 
 func generateADCValue() int {
-    max := 0x7FFFFFFF
-    return rand.Intn(max + 1)
+    maxValue := 0x7FFFFFFF
+    return rand.Intn(maxValue + 1)
 }
 
 func calculateVoltage(raw int) float64 {
