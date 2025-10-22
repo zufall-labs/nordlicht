@@ -2,11 +2,11 @@ name: Build & Test (Go)
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
     paths:
       - "src/entropy-service/**"
   pull_request:
-    branches: ["main"]
+    branches: [ "main" ]
     paths:
       - "src/entropy-service/**"
 
