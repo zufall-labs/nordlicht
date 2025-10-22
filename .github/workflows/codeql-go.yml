@@ -5,6 +5,8 @@ on:
     branches: ["main"]
   pull_request:
     branches: ["main"]
+    paths:
+      - "src/entropy-service/**"  # Only trigger when the entropy service changes
   schedule:
     - cron: '0 1 * * *'
 
