@@ -1,8 +1,8 @@
 package app
 
 import (
-    "github.com/gofiber/fiber/v2"
     "ai.zufall.nordlicht.entropy/internal/service"
+    "github.com/gofiber/fiber/v2"
 )
 
 type App struct {

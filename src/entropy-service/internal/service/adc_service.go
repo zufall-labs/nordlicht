@@ -5,10 +5,11 @@ import (
     "encoding/json"
     "fmt"
     "net/http"
+
     "ai.zufall.nordlicht.entropy/internal/shared"
 )
 
-func GetADCValueWithCalculation() (map[string]interface{}, error) {
+func GetADCValueWithCalculation() (result map[string]interface{}, err error) {
     shared.ADCValueMutex.Lock()
     defer shared.ADCValueMutex.Unlock()
 
@@ -25,12 +26,15 @@ func GetADCValueWithCalculation() (map[string]interface{}, error) {
     if err != nil {
         return nil, err
     }
-    defer resp.Body.Close()
+    defer func() {
+        if cerr := resp.Body.Close(); cerr != nil && err == nil {
+            err = cerr // propagate Close() error only if no other error occurred
+        }
+    }()
 
-    var result map[string]interface{}
     if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
         return nil, err
     }
-	
+
     return result, nil
 }
