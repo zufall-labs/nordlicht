@@ -13,11 +13,11 @@ group = "ai.zufall.nordlicht.calc"
 version = "1.0.0-SNAPSHOT"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21 // Gradle should use Java 1 features and Syntax when compiling
+    sourceCompatibility = JavaVersion.VERSION_25 // Gradle should use Java 25 features and Syntax when compiling
     toolchain {
-        // Gradle checks for a local Java 21 version and uses it if one is found.
+        // Gradle checks for a local Java 25 version and uses it if one is found.
         // If there's no local version, the build crashes. The foojay-resolver-convention plugin is needed then.
-        languageVersion.set(JavaLanguageVersion.of(21))
+        languageVersion.set(JavaLanguageVersion.of(25))
         vendor = JvmVendorSpec.ADOPTIUM // Gradle uses Eclipse Temurin (AdoptOpenJDK HotSpot)
     }
 }
@@ -28,14 +28,14 @@ repositories {
 
 dependencies {
     implementation(enforcedPlatform(libs.io.quarkus.quarkusBom)) // The BOM for Quarkus.
-    implementation("io.quarkus:quarkus-rest")
-    implementation("io.quarkus:quarkus-rest-jackson")
-    implementation("io.quarkus:quarkus-arc")
-    implementation("io.quarkus:quarkus-smallrye-health")
-    implementation("io.quarkus:quarkus-swagger-ui")
+    implementation(libs.io.quarkus.quarkusArc)
+    implementation(libs.io.quarkus.quarkusRest)
+    implementation(libs.io.quarkus.quarkusRestJackson)
+    implementation(libs.io.quarkus.quarkusSmallryeHealth)
+    implementation(libs.io.quarkus.quarkusSwaggerUi)
 
-    testImplementation("io.quarkus:quarkus-junit5")
-    testImplementation("io.rest-assured:rest-assured")
+    testImplementation(libs.io.restAsured.restAssured)
+    testImplementation(libs.io.quarkus.quarkusJunit5)
 }
 
 tasks.withType<Jar> {
