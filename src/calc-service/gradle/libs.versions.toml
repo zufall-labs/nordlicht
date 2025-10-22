@@ -1,6 +1,6 @@
 [versions]
 quarkus-version = "3.26.3"
-lombok-version = "8.14.2"
+lombok-version = "9.0.0"
 forbiddenapis-version = "3.10"
 
 [libraries]
