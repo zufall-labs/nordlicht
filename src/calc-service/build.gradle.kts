@@ -13,11 +13,11 @@ group = "ai.zufall.nordlicht.calc"
 version = "1.0.0-SNAPSHOT"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21 // Gradle should use Java 1 features and Syntax when compiling
+    sourceCompatibility = JavaVersion.VERSION_25 // Gradle should use Java 25 features and Syntax when compiling
     toolchain {
-        // Gradle checks for a local Java 21 version and uses it if one is found.
+        // Gradle checks for a local Java 25 version and uses it if one is found.
         // If there's no local version, the build crashes. The foojay-resolver-convention plugin is needed then.
-        languageVersion.set(JavaLanguageVersion.of(21))
+        languageVersion.set(JavaLanguageVersion.of(25))
         vendor = JvmVendorSpec.ADOPTIUM // Gradle uses Eclipse Temurin (AdoptOpenJDK HotSpot)
     }
 }

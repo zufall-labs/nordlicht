@@ -1,7 +1,7 @@
 [versions]
 quarkus-version = "3.26.3"
 lombok-version = "8.14.2"
-forbiddenapis-version = "3.9"
+forbiddenapis-version = "3.10"
 
 [libraries]
 io-quarkus-quarkusBom = { module = "io.quarkus:quarkus-bom", version.ref = "quarkus-version" }
