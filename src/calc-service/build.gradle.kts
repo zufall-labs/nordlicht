@@ -28,14 +28,14 @@ repositories {
 
 dependencies {
     implementation(enforcedPlatform(libs.io.quarkus.quarkusBom)) // The BOM for Quarkus.
-    implementation("io.quarkus:quarkus-rest")
-    implementation("io.quarkus:quarkus-rest-jackson")
-    implementation("io.quarkus:quarkus-arc")
-    implementation("io.quarkus:quarkus-smallrye-health")
-    implementation("io.quarkus:quarkus-swagger-ui")
+    implementation(libs.io.quarkus.quarkusArc)
+    implementation(libs.io.quarkus.quarkusRest)
+    implementation(libs.io.quarkus.quarkusRestJackson)
+    implementation(libs.io.quarkus.quarkusSmallryeHealth)
+    implementation(libs.io.quarkus.quarkusSwaggerUi)
 
-    testImplementation("io.quarkus:quarkus-junit5")
-    testImplementation("io.rest-assured:rest-assured")
+    testImplementation(libs.io.restAsured.restAssured)
+    testImplementation(libs.io.quarkus.quarkusJunit5)
 }
 
 tasks.withType<Jar> {
