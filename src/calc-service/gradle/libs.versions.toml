@@ -1,5 +1,5 @@
 [versions]
-quarkus-version = "3.28.5"
+quarkus-version = "3.29.0"
 lombok-version = "9.0.0"
 forbiddenapis-version = "3.10"
 
